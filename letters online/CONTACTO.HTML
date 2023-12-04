@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letras Didácticas Online</title>
+<link rel="stylesheet" href="estiloc.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <a href="#" class="enlace">
+        <img src="images\1.png" alt="" class="logito2">
+    </a>
+    <ul>
+        <li><a class="active" href="HOME.HTML">HOME</a></li>
+        <li><a href="diccionario.html">DICCIONARIO</a></li>
+        <li><a href="JUEGO.HTML">JUEGO</a></li>
+        <li><a href="CONTACTO.HTML">CONTACTO</a></li>
+    </ul>
+    </nav>
+    <section>
+        <p class="texto-importante">Es muy importante para nosotros que nos digas
+             qué opinas de nuestro servicio, por favor llena el siguiente formulario.</p>
+        <div class="boton-izquierda">
+            <a href="JUEGO.HTML" class="boton">Anterior</a>
+        </div>
+        <div class="boton-derecha">
+            <a href="index.html" class="boton">Siguiente</a>
+        </div>
+        <div class="container">
+            <h2>Formulario de Sugerencia</h2>
+            <img src="images\contact-bg.png" alt="Imagen de ejemplo" class="formulario-imagen">
+            <form id="sugerencia-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="nombre">Apellido:</label>
+                <input type="text" id="Apellido" name="Apellido" required>
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" name="email" required>
+                
+                <label for="sugerencia">Sugerencia:</label>
+                <textarea id="sugerencia" name="sugerencia" rows="4" required></textarea>
+                
+                <button type="submit">Enviar Sugerencia</button>
+            </form>
+            <div id="agradecimiento" class="agradecimiento" style="display: none;">
+                Gracias por tu respuesta! Quedaremos pendientes a tu solicitud.
+            </div>
+            <br>
+            <a href="CONTACTO.HTML" class="volver-boton" id="volver-formulario">Volver al formulario</a> 
+        </div>
+        </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("sugerencia-form");
+            const agradecimiento = document.getElementById("agradecimiento");
+            const volverBoton = document.getElementById("volver-formulario");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                const formData = new FormData(form);
+
+                fetch("procesar_formulario.php", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                form.style.display = "none";
+                agradecimiento.style.display = "block";
+            });
+
+            volverBoton.addEventListener("click", function (event) {
+                event.preventDefault();
+                form.style.display = "block";
+                agradecimiento.style.display = "none";
+            });
+        });
+        </script>
+    </section>
+    
+    <footer>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/tu_pagina_de_facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/tu_pagina_de_instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/tu_pagina_de_tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <br></br>
+        <p>&copy; 2023 AJ.WORKERS S.A.S Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

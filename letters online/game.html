@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <AUdio id="MillonarioSound" src="./audio/quien-quiere-ser-millonario-millionaire-slumdog.mp3" autoplay></AUdio>
+    <title>Letras Didacticas Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1> Letras Didacticas Online</h1>
+        <div class="start-container">
+            <label for="playerName">Nombre:</label>
+            <input type="text" id="playerName">
+            <button id="startButton">Comenzar</button>
+        </div>
+        <div id="quiz-container" style="display: none;">
+            <h2>Pregunta <span id="question-number">1</span>/30</h2>
+            <p id="question-text"></p>
+            <div id="options-container"></div>
+            <div class="timer">Tiempo restante: <span id="timer">300</span> segundos</div>
+            <button id="nextButton">Siguiente</button>
+    </div>
+    <a href="game.html" id="restartButton" style="display: none;">Reiniciar Juego</a>
+            <br>
+            <a href="JUEGO.HTML" id="returnButton" style="display: none;">Volver</a>
+            <br>
+            <a href="ahorcado.html" id="nixtButton" style="display: none;">Siguiente Modulo</a>
+            <br>
+</body>
+<script src="script.js"></script>
+
+</html>

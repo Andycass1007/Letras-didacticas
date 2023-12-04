@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <AUdio id="MillonarioSound" src="./audio/quien-quiere-ser-millonario-millionaire-slumdog.mp3" autoplay></AUdio>
+    <title>Adivinanzas de Ortografía</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            background-image: url("https://store-images.s-microsoft.com/image/apps.48400.14573449505340069.0f503adc-58ce-4d41-a12d-792f97d4a1c0.172673f6-7954-4b39-90f1-701aee6722c8?q=90&w=480&h=270");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        input {
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #0074d9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-container" class="container">
+    <h1>Adivinanzas de Ortografía</h1>
+    <p id="definition"></p>
+    <input type="text" id="user-input" placeholder="Escribe aquí">
+    <button onclick="startGame()">Comenzar Juego</button>
+    <button onclick="checkAnswer()">Verificar Respuesta</button>
+    <button onclick="nextRiddle()">Siguiente Adivinanza</button>
+    <button onclick="restartGame()">Reiniciar Juego</button>
+    <button onclick="goToHome()">Volver al Inicio</button>
+    <p id="timer"></p>
+</div>
+
+<script>
+    const riddles = [
+        { definition: "Conjunto de reglas y convenciones para escribir correctamente.", answer: "ortografía" },
+        { definition: "Palabra que expresa una acción, estado o proceso.", answer: "verbo" },
+        { definition: "Palabra que une palabras, frases u oraciones.", answer: "conjunción" },
+        { definition: "Palabra que se utiliza para sustituir o reemplazar a un sustantivo.", answer: "pronombre" },
+        { definition: "Palabra que expresa un sentimiento o emoción.", answer: "interjección" },
+        { definition: "Palabra que nombra a una persona, animal, cosa o idea.", answer: "sustantivo" }
+    ];
+
+    let currentRiddleIndex = 0;
+    let startTime, endTime, timerInterval, correctAnswersCount;
+
+    function displayRiddle() {
+        const riddleContainer = document.getElementById("definition");
+        riddleContainer.textContent = `Adivinanza: ${riddles[currentRiddleIndex].definition}`;
+        document.getElementById("user-input").value = "";
+    }
+
+    function startGame() {
+        startTime = new Date();
+        displayRiddle();
+        startTimer();
+        correctAnswersCount = 0;
+    }
+
+    function checkAnswer() {
+        endTime = new Date();
+        const userAnswer = document.getElementById("user-input").value.trim().toLowerCase();
+        const correctAnswer = riddles[currentRiddleIndex].answer.toLowerCase();
+
+        if (userAnswer === correctAnswer) {
+            alert("¡Respuesta Correcta!");
+            correctAnswersCount++;
+        } else {
+            alert("Respuesta Incorrecta. ¡Inténtalo de nuevo!");
+        }
+
+        nextRiddle();
+    }
+
+    function nextRiddle() {
+        currentRiddleIndex++;
+
+        if (currentRiddleIndex < riddles.length) {
+            displayRiddle();
+        } else {
+            endGame();
+        }
+    }
+
+    function restartGame() {
+        currentRiddleIndex = 0;
+        startTime = null;
+        endTime = null;
+        displayRiddle();
+        resetTimer();
+        correctAnswersCount = 0;
+    }
+
+    function goToHome() {
+        window.location.href = 'JUEGO.HTML';
+    }
+
+    function endGame() {
+        endTime = new Date();
+        const totalTime = (endTime - startTime) / 1000; // Tiempo en segundos
+        alert(`¡Felicidades! Has completado todas las adivinanzas en ${totalTime} segundos. Adivinanzas correctas: ${correctAnswersCount}`);
+        resetTimer();
+    }
+
+    function startTimer() {
+        let secondsLeft = 180; // 3 minutos
+        timerInterval = setInterval(function () {
+            const minutes = Math.floor(secondsLeft / 60);
+            const seconds = secondsLeft % 60;
+            document.getElementById("timer").textContent = `Tiempo restante: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            secondsLeft--;
+
+            if (secondsLeft < 0) {
+                endGame();
+            }
+        }, 1000);
+    }
+
+    function resetTimer() {
+        clearInterval(timerInterval);
+        document.getElementById("timer").textContent = "";
+    }
+</script>
+</body>
+</html>
+
+
+

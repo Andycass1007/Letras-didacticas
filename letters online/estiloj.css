@@ -1,0 +1,201 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+nav{
+    background: lightblue;
+    height: 80px;
+    width: 100%;
+}
+
+.enlace{
+    position: absolute;
+    padding: 10px 30px;
+}
+.logito2{
+    float: right;
+    margin-right: 20px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: black;
+    font-size:  7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+li a.active, li a:hover{
+    background: wheat;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: azure;
+    float: left;
+    line-height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+section{
+    background: url(https://media.giphy.com/media/Q5RjtPsU4Ds5ByAVI9/giphy.gif) no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    height: 100vh;
+}
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: lightblue;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: bisque;
+    }
+    #check:checked ~ul{
+        left: 0;
+    }
+}
+.boton {
+    padding: 10px 20px;
+    background-color: aqua;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: beige;
+}
+
+.boton-izquierda {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.boton-derecha {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+footer {
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
+.redes-sociales {
+    margin-top: 20px;
+}
+
+.redes-sociales a {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.redes-sociales a:hover {
+    color: beige;
+}
+.titulo {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: black; 
+}
+h1.titulo {
+    font-size: 55px; 
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: darkblue;
+  }
+  h2.subtitulo {
+    font-size: 40px; 
+    text-align: center;
+    margin-top: 10px; 
+    color: darkcyan; 
+  }
+  
+
+  img.imagen-didactica {
+    display: block;
+    margin: 20px auto;
+    max-width: 80%; 
+    height: auto;
+  }
+  
+  a.boton {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: aqua;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  a.boton:hover {
+    background-color: wheat; 
+  }
+  
+  a.boton:active {
+    background-color: wheat; 
+  }
+
+  

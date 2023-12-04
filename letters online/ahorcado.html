@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <AUdio id="MillonarioSound" src="./audio/quien-quiere-ser-millonario-millionaire-slumdog.mp3" autoplay></AUdio>
+    <title>Letras Didácticas Online</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: url("https://store-images.s-microsoft.com/image/apps.48400.14573449505340069.0f503adc-58ce-4d41-a12d-792f97d4a1c0.172673f6-7954-4b39-90f1-701aee6722c8?q=90&w=480&h=270");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        color: blueviolet;
+      }
+      #word {
+        font-size: 24px;
+        margin: 10px 0;
+        color: antiquewhite;
+      }
+      #guesses {
+        font-size: 18px;
+        color: antiquewhite;
+      }
+      #attempts {
+        font-size: 18px;
+        color: antiquewhite;
+      }
+      #input-container {
+        margin: 10px 0;
+      }
+      #name {
+        font-size: 18px;
+        color: antiquewhite;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 5px;
+      }
+      #input {
+        font-size: 18px;
+        width: 30px;
+        text-transform: uppercase;
+      }
+      .btn {
+        font-size: 18px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+      }
+      #btn-guess {
+        background-color: #007bff;
+      }
+      #btn-restart {
+        background-color: #28a745;
+      }
+      #btn-back {
+        background-color: #333;
+      }
+      #btn-Anterior {
+        background-color: cornflowerblue;
+      }
+      #btn-next{
+        background-color: violet;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Letras Didácticas Online</h1>
+    <p style="color: antiquewhite;">¡Adivina la palabra secreta! Tienes 6 intentos.</p>
+    <p style="color: antiquewhite;">Nombre: <input id="name" type="text"></p>
+    <p id="attempts">Intentos restantes: 6</p>
+    <p id="word"></p>
+    <p id="guesses">Tus intentos: </p>
+    <div id="input-container">
+      <input id="input" maxlength="1">
+      <button id="btn-guess" class="btn">Adivinar</button>
+      <button id="btn-restart" class="btn">Reiniciar Juego</button>
+      <button id="btn-back" class="btn">Volver</button>
+      <button id="btn-Anterior" class="btn">Anterior</button>
+      <button id="btn-next" class="btn">Siguiente Modulo</button>
+    </div>
+
+    <script>
+      const palabras = ['ACENTO', 'TILDE', 'DIÉRESIS', 'GRAMÁTICA', 'SÍLABA', 'LETRA', 'REGLAS', 'ORTOGRAFÍA', 'PUNTUACIÓN', 'CORRECCIÓN', 'ESCRITURA', 'COMA', 'SINÓNIMO', 'ANTÓNIMO', 'VERBO', 'SUSTANTIVO', 'CONSONANTE', 'SINTAXIS', 'NORMAS', 'REDACCIÓN', 'DICCIONARIO', 'LENGUA'];
+
+function seleccionarPalabra() {
+  const indice = Math.floor(Math.random() * palabras.length);
+  return palabras[indice];
+}
+
+let palabraSecreta = seleccionarPalabra().toUpperCase();
+let palabraAdivinada = '_'.repeat(palabraSecreta.length);
+let intentosRestantes = 6;
+let intentos = [];
+
+const nameInput = document.getElementById('name');
+const attemptsDisplay = document.getElementById('attempts');
+const wordDisplay = document.getElementById('word');
+const guessesDisplay = document.getElementById('guesses');
+const input = document.getElementById('input');
+const guessButton = document.getElementById('btn-guess');
+const anteriorButton = document.getElementById('btn-Anterior');
+const siguienteButton= document.getElementById('btn-next');
+
+function actualizarPantalla() {
+  attemptsDisplay.textContent = `Intentos restantes: ${intentosRestantes}`;
+  wordDisplay.textContent = palabraAdivinada;
+  guessesDisplay.textContent = `Tus intentos: ${intentos.join(', ')}`;
+}
+
+
+function procesarIntento(letra) {
+  if (palabraSecreta.includes(letra)) {
+    for (let i = 0; i < palabraSecreta.length; i++) {
+      if (palabraSecreta[i] === letra) {
+        palabraAdivinada = palabraAdivinada.substring(0, i) + letra + palabraAdivinada.substring(i + 1);
+      }
+    }
+    if (palabraAdivinada === palabraSecreta) {
+      alert(`¡Felicidades, ${nameInput.value}! Has ganado. La palabra era "${palabraSecreta}".`);
+      reiniciarJuego();
+    }
+  } else {
+    intentosRestantes--;
+    if (intentosRestantes === 0) {
+      alert(`¡Lo siento, ${nameInput.value}! Has perdido. La palabra era "${palabraSecreta}".`);
+      reiniciarJuego();
+    }
+  }
+  intentos.push(letra);
+  actualizarPantalla();
+}
+
+
+function reiniciarJuego() {
+  palabraSecreta = seleccionarPalabra().toUpperCase();
+  palabraAdivinada = '_'.repeat(palabraSecreta.length);
+  intentosRestantes = 6;
+  intentos = [];
+  input.value = '';
+  actualizarPantalla();
+}
+
+actualizarPantalla();
+
+guessButton.addEventListener('click', () => {
+  const letra = input.value.toUpperCase();
+  if (letra.length === 1 && letra.match(/[A-Z]/)) {
+    procesarIntento(letra);
+    input.value = '';
+  } else {
+    alert('Ingresa una letra válida.');
+  }
+});
+      
+      
+      const restartButton = document.getElementById('btn-restart');
+      restartButton.addEventListener('click', () => {
+        reiniciarJuego();
+      });
+  
+      
+      const backButton = document.getElementById('btn-back');
+      backButton.addEventListener('click', () => {
+        window.location.href = 'JUEGO.HTML'; 
+      });
+      const AnteriorButton = document.getElementById('btn-anterior');
+anteriorButton.addEventListener('click', () => {
+  window.location.href = 'game.html'; 
+});
+
+const nextButton = document.getElementById('btn-next');
+nextButton.addEventListener('click', () => {
+  window.location.href = 'adivina.html'; 
+});
+    </script>
+  </body>
+</html>

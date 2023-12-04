@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url("https://store-images.s-microsoft.com/image/apps.48400.14573449505340069.0f503adc-58ce-4d41-a12d-792f97d4a1c0.172673f6-7954-4b39-90f1-701aee6722c8?q=90&w=480&h=270");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    background-color: #0099cc;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.start-container {
+    display: block;
+}
+
+#quiz-container {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#restartButton, #returnButton, #nixtButton {
+    display: none;
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 15px;
+    padding: 15px 25px;
+}
+
+#restartButton:hover, #returnButton:hover, #nixtButton:hover {
+    background-color: #0056b3;
+}
+
+button {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 15px 25px;
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.timer {
+    font-size: 20px;
+    margin-top: 25px;
+}
+@media screen and (max-width: 600px) {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-image: url("https://store-images.s-microsoft.com/image/apps.48400.14573449505340069.0f503adc-58ce-4d41-a12d-792f97d4a1c0.172673f6-7954-4b39-90f1-701aee6722c8?q=90&w=480&h=270");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    h1 {
+        text-align: center;
+        color: #fff;
+        background-color: #0099cc;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .start-container {
+        display: block;
+    }
+    
+    #quiz-container {
+        display: none;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    #restartButton, #returnButton, #nixtButton {
+        display: none;
+        background-color: #0074d9;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 15px;
+        padding: 15px 25px;
+    }
+    
+    #restartButton:hover, #returnButton:hover, #nixtButton {
+        background-color: #0056b3;
+    }
+    
+    button {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        padding: 15px 25px;
+        background-color: #0074d9;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    .timer {
+        font-size: 20px;
+        margin-top: 25px;
+    }
+}

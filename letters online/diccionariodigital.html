@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Diccionario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            background-image: url("https://store-images.s-microsoft.com/image/apps.48400.14573449505340069.0f503adc-58ce-4d41-a12d-792f97d4a1c0.172673f6-7954-4b39-90f1-701aee6722c8?q=90&w=480&h=270");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background: linear-gradient(135deg, #9d06f5, #2147f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 20px;
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .diccionario {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #ee86e9, #5ecac8);
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(199, 77, 236, 0.6);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 15px;
+            margin: 15px 0;
+            background: linear-gradient(135deg, #ee86e9,#5ecac8 );
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(179, 55, 250, 0.4);
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        li:hover {
+            transform: scale(1.03);
+        }
+
+        strong {
+            font-weight: bold;
+            background-color: lightskyblue;
+        }
+
+        .letra-titulo {
+            font-size: 24px;
+            margin-top: 20px;
+            border-bottom: 1px solid rgba(212, 93, 241, 0.997);
+            color: lightcoral;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff; 
+            color: black; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease-in-out; 
+        }
+
+        button:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Mi Diccionario</h1>
+    
+    <div class="letra-titulo">A</div>
+    <ul>
+        <li>
+            <strong>Abundante:</strong> Que existe en gran cantidad.
+        </li>
+        <li>
+            <strong>Acogedor:</strong> Que recibe con agrado y amabilidad.
+        </li>
+        <li>
+            <strong>Amistad:</strong> Relación de afecto y cariño entre amigos.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">B</div>
+    <ul>
+        <li>
+            <strong>Belleza:</strong> Cualidad de ser hermoso o atractivo.
+        </li>
+        <li>
+            <strong>Bondad:</strong> Cualidad de ser bueno y generoso.
+        </li>
+        <li>
+            <strong>Brillante:</strong> Que emite luz intensa o destaca por su inteligencia.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">C</div>
+    <ul>
+        <li>
+            <strong>Cultura:</strong> Conjunto de conocimientos, creencias, costumbres y valores de una sociedad.
+        </li>
+        <li>
+            <strong>Cautivar:</strong> Atraer la atención o el interés de alguien.
+        </li>
+        <li>
+            <strong>Civilización:</strong> Sociedad avanzada con un alto nivel de desarrollo cultural y tecnológico.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">D</div>
+    <ul>
+        <li>
+            <strong>Democracia:</strong> Sistema de gobierno en el que el poder es ejercido por el pueblo.
+        </li>
+        <li>
+            <strong>Diversidad:</strong> Variedad en la forma o cualidad de algo.
+        </li>
+        <li>
+            <strong>Dignidad:</strong> Valor y respeto que merece una persona.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">E</div>
+    <ul>
+        <li>
+            <strong>Ecosistema:</strong> Comunidad de seres vivos y su entorno físico en interacción.
+        </li>
+        <li>
+            <strong>Empatía:</strong> Capacidad de entender y compartir los sentimientos de otros.
+        </li>
+        <li>
+            <strong>Efímero:</strong> Que dura por poco tiempo.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">F</div>
+    <ul>
+        <li>
+            <strong>Felicidad:</strong> Estado de bienestar y satisfacción.
+        </li>
+        <li>
+            <strong>Fortaleza:</strong> Resistencia y capacidad para superar desafíos.
+        </li>
+        <li>
+            <strong>Fomentar:</strong> Promover o estimular el desarrollo de algo.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">G</div>
+    <ul>
+        <li>
+            <strong>Generosidad:</strong> Acto de dar sin esperar nada a cambio.
+        </li>
+        <li>
+            <strong>Gratitud:</strong> Sentimiento de agradecimiento.
+        </li>
+        <li>
+            <strong>Globalización:</strong> Proceso de interconexión económica, política y cultural a nivel mundial.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">H</div>
+    <ul>
+        <li>
+            <strong>Honestidad:</strong> Cualidad de decir la verdad y actuar con integridad.
+        </li>
+        <li>
+            <strong>Humanidad:</strong> Conjunto de seres humanos.
+        </li>
+        <li>
+            <strong>Harmonía:</strong> Estado de equilibrio y concordia.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">I</div>
+    <ul>
+        <li>
+            <strong>Innovación:</strong> Introducción de novedades o mejoras.
+        </li>
+        <li>
+            <strong>Integridad:</strong> Honestidad y coherencia en las acciones y principios.
+        </li>
+        <li>
+            <strong>Intolerancia:</strong> Falta de respeto hacia las opiniones o creencias diferentes.
+        </li>
+    </ul>
+    <div class="letra-titulo">J</div>
+    <ul>
+        <li>
+            <strong>Júbilo:</strong> Gran alegría o satisfacción.
+        </li>
+        <li>
+            <strong>Justicia:</strong> Principio de dar a cada uno lo que le corresponde.
+        </li>
+        <li>
+            <strong>Jardín:</strong> Espacio decorativo con plantas y flores.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">K</div>
+    <ul>
+        <li>
+            <strong>Kilómetro:</strong> Unidad de medida de longitud, igual a 1,000 metros.
+        </li>
+        <li>
+            <strong>Karate:</strong> Arte marcial japonés.
+        </li>
+        <li>
+            <strong>Karma:</strong> Concepto de causa y efecto en algunas religiones y filosofías.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">L</div>
+    <ul>
+        <li>
+            <strong>Liderazgo:</strong> Habilidad de guiar y dirigir a otros.
+        </li>
+        <li>
+            <strong>Literatura:</strong> Obras escritas, incluyendo novelas, poesía, y ensayos.
+        </li>
+        <li>
+            <strong>Luna:</strong> Satélite natural de la Tierra.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">M</div>
+    <ul>
+        <li>
+            <strong>Música:</strong> Arte de combinar sonidos de manera armoniosa.
+        </li>
+        <li>
+            <strong>Motivación:</strong> Estímulo para llevar a cabo una acción.
+        </li>
+        <li>
+            <strong>Montaña:</strong> Elevación natural del terreno con gran altura.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">N</div>
+    <ul>
+        <li>
+            <strong>Naturaleza:</strong> Mundo físico y sus fenómenos naturales.
+        </li>
+        <li>
+            <strong>Nación:</strong> Comunidad de personas que comparten una cultura y territorio.
+        </li>
+        <li>
+            <strong>Ñandú:</strong> Ave corredora de América del Sur.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">O</div>
+    <ul>
+        <li>
+            <strong>Optimismo:</strong> Actitud positiva y esperanzada.
+        </li>
+        <li>
+            <strong>Ornamento:</strong> Adorno o decoración.
+        </li>
+        <li>
+            <strong>Organización:</strong> Grupo de personas coordinando tareas para alcanzar un objetivo.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">P</div>
+    <ul>
+        <li>
+            <strong>Patrimonio:</strong> Conjunto de bienes culturales, naturales y materiales heredados de generaciones anteriores.
+        </li>
+        <li>
+            <strong>Perseverancia:</strong> Mantenerse constante en la realización de algo a pesar de las dificultades.
+        </li>
+        <li>
+            <strong>Pluralidad:</strong> Existencia de diferentes opiniones, creencias o elementos en un grupo o sociedad.
+        </li>
+    </ul>
+    <div class="letra-titulo">Q</div>
+    <ul>
+        <li>
+            <strong>Quimera:</strong> Ilusión o fantasía irrealizable.
+        </li>
+        <li>
+            <strong>Quiosco:</strong> Pequeño puesto de venta.
+        </li>
+        <li>
+            <strong>Química:</strong> Ciencia que estudia la composición de las sustancias.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">R</div>
+    <ul>
+        <li>
+            <strong>Revolución:</strong> Cambio profundo y rápido en un sistema o estructura.
+        </li>
+        <li>
+            <strong>Resiliencia:</strong> Capacidad de adaptarse y superar situaciones adversas.
+        </li>
+        <li>
+            <strong>Romanticismo:</strong> Movimiento cultural del siglo XIX enfocado en la emoción y la imaginación.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">S</div>
+    <ul>
+        <li>
+            <strong>Solidaridad:</strong> Apoyo y colaboración mutua en tiempos difíciles.
+        </li>
+        <li>
+            <strong>Sabiduría:</strong> Conocimiento profundo y experiencia.
+        </li>
+        <li>
+            <strong>Sostenibilidad:</strong> Prácticas que protegen el medio ambiente y los recursos naturales.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">T</div>
+    <ul>
+        <li>
+            <strong>Tecnología:</strong> Conjunto de conocimientos y técnicas aplicadas para producir bienes y servicios.
+        </li>
+        <li>
+            <strong>Tolerancia:</strong> Respeto y aceptación de las opiniones o creencias diferentes a las propias.
+        </li>
+        <li>
+            <strong>Turismo:</strong> Actividad que implica viajar y explorar diferentes lugares por placer o recreación.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">U</div>
+    <ul>
+        <li>
+            <strong>Unidad:</strong> Estado de ser una sola entidad.
+        </li>
+        <li>
+            <strong>Utopía:</strong> Idea o proyecto idealista y perfecto, pero difícil de lograr.
+        </li>
+        <li>
+            <strong>Universalidad:</strong> Carácter de ser válido o aplicable en todas partes.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">V</div>
+    <ul>
+        <li>
+            <strong>Valentía:</strong> Coraje y determinación ante situaciones difíciles.
+        </li>
+        <li>
+            <strong>Veracidad:</strong> Calidad de decir la verdad.
+        </li>
+        <li>
+            <strong>Vitalidad:</strong> Energía y fuerza para vivir y desarrollarse.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">W</div>
+    <ul>
+        <li>
+            <strong>Windsurf:</strong> Deporte acuático que combina surf y vela.
+        </li>
+        <li>
+            <strong>Web:</strong> Red informática de documentos interconectados.
+        </li>
+        <li>
+            <strong>Workshop:</strong> Taller o seminario de aprendizaje.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">X</div>
+    <ul>
+        <li>
+            <strong>Xilófono:</strong> Instrumento musical de percusión con láminas de madera.
+        </li>
+        <li>
+            <strong>Xenofobia:</strong> Hostilidad hacia los extranjeros.
+        </li>
+        <li>
+            <strong>Xerofilia:</strong> Preferencia por plantas que requieren poco agua.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">Y</div>
+    <ul>
+        <li>
+            <strong>Yoga:</strong> Práctica física y mental que busca la armonía y el equilibrio.
+        </li>
+        <li>
+            <strong>Yunque:</strong> Herramienta de metal para forjar objetos.
+        </li>
+        <li>
+            <strong>Yacimiento:</strong> Lugar donde se encuentra una acumulación de minerales, fósiles, etc.
+        </li>
+    </ul>
+
+    <div class="letra-titulo">Z</div>
+    <ul>
+        <li>
+            <strong>Zafiro:</strong> Gema preciosa de color azul.
+        </li>
+        <li>
+            <strong>Zenit:</strong> Punto más alto en el cielo sobre un observador.
+        </li>
+        <li>
+            <strong>Zoología:</strong> Ciencia que estudia los animales.
+        </li>
+    </ul>
+    <button class="volver-boton" onclick="volver()">Volver</button>
+    <script>
+        function animateListEntry(element) {
+            anime({
+                targets: element,
+                opacity: [0, 1],
+                translateY: [-10, 0],
+                duration: 1000,
+                easing: 'easeOutExpo',
+                delay: anime.stagger(100)
+            });
+        }
+        const lista = document.querySelector(".diccionario");
+        lista.classList.add("fade-in");
+        const items = document.querySelectorAll("li");
+        items.forEach(item => {
+            animateListEntry(item);
+        });
+        function volver() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
+
+
+
